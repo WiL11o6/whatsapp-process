@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Text Processing</h1>
-        
-        <form method="POST" action="/process" enctype="multipart/form-data">
+        <h1>Chat Processing</h1>
+
+        <form method="POST" action="/process" enctype="multipart/form-data" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="fileInput">Select a text file:</label>
                 <input type="file" class="form-control-file" id="fileInput" name="file" accept=".txt">
@@ -19,5 +19,17 @@
             <button type="submit" class="btn btn-primary">Upload and Process</button>
         </form>
     </div>
+    <script>
+        function validateForm() {
+            var fileInput = document.getElementById("fileInput");
+            
+            if (fileInput.value === "") {
+                alert("Please choose a file before submitting.");
+                return false; // Prevent form submission
+            }
+            
+            return true; // Allow form submission
+        }
+    </script>
 </body>
 </html>

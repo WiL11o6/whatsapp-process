@@ -23,4 +23,4 @@ def process():
         return render_template('results.html', table_data=processed_data.to_html(classes='table table-striped'))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080)
